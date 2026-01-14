@@ -21,4 +21,10 @@ app.use('/api/pets',petsRouter);
 app.use('/api/adoptions',adoptionsRouter);
 app.use('/api/sessions',sessionsRouter);
 
+app.get('/', (req, res) => {
+  res.send('API Adoptme funcionando 🚀');
+});
+
 app.listen(PORT,()=>console.log(`Listening on ${PORT}`))
+
+

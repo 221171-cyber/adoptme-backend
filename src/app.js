@@ -9,7 +9,9 @@ import sessionsRouter from './routes/sessions.router.js';
 
 const app = express();
 const PORT = process.env.PORT||8080;
-const connection = mongoose.connect(`URL DE MONGO`)
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log('MongoDB conectado'))
+  .catch(err => console.error('Error MongoDB:', err));
 
 app.use(express.json());
 app.use(cookieParser());
